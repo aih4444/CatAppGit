@@ -1,15 +1,11 @@
 package com.example.catapp.ui.breeds
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavAction
-import androidx.navigation.NavActionBuilder
-import androidx.navigation.NavDirections
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.catapp.R
 import com.example.catapp.databinding.FragmentBreedListBinding
@@ -20,7 +16,6 @@ import org.koin.android.ext.android.inject
 class BreedListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BreedListFragment()
     }
 
     private val viewModel: BreedListViewModel by inject()

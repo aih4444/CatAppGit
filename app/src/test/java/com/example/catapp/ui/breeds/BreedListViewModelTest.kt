@@ -2,21 +2,15 @@ package com.example.catapp.ui.breeds
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.catapp.Application
-import com.example.catapp.network.CatApiService
-import com.example.catapp.util.LoadState
 import io.mockk.MockKAnnotations
 import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK
-import io.mockk.verify
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import kotlinx.coroutines.withContext
 import org.junit.After
-import org.junit.Assert.*
-
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

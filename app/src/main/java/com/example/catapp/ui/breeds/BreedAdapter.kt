@@ -7,7 +7,7 @@ import coil.load
 import com.example.catapp.databinding.BreedItemViewBinding
 import com.example.catapp.model.CatBreed
 
-class BreedAdapter(var data: List<CatBreed>, val listener: (CatBreed) -> Unit) :
+class BreedAdapter(private var data: List<CatBreed>, private val listener: (CatBreed) -> Unit) :
     RecyclerView.Adapter<BreedAdapter.BreedViewHolder>() {
 
 

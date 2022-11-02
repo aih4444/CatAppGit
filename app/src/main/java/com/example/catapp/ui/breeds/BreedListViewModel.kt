@@ -5,13 +5,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.catapp.model.CatBreed
-import com.example.catapp.network.CatApiService
 import com.example.catapp.util.LoadState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class BreedListViewModel(application: Application, val repository: Repository) :
+class BreedListViewModel(application: Application, private val repository: Repository) :
     AndroidViewModel(application) {
 
     private val _listOfBreeds =  MutableLiveData<LoadState>()
