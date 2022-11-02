@@ -31,7 +31,7 @@ class BreedListViewModelTest {
     private lateinit var applicationMock: Application
 
     @MockK
-    private lateinit var serviceMock: CatApiService
+    private lateinit var repositoryMock: Repository
 
     private lateinit var subject: BreedListViewModel
 
@@ -39,7 +39,7 @@ class BreedListViewModelTest {
     fun setUp() {
         Dispatchers.setMain(Dispatchers.Unconfined)
         MockKAnnotations.init(this)
-        subject = BreedListViewModel(applicationMock, serviceMock)
+        subject = BreedListViewModel(applicationMock, repositoryMock)
     }
 
     @Test
@@ -47,7 +47,7 @@ class BreedListViewModelTest {
         withContext(Dispatchers.Main) {
             subject.updateList()
 //            val type = subject.listOfBreeds.value
-            coVerify { serviceMock.getAllBreeds() }
+            coVerify { repositoryMock.getAllBreeds() }
         }
     }
 

@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class BreedListViewModel(application: Application, val service: CatApiService) :
+class BreedListViewModel(application: Application, val repository: Repository) :
     AndroidViewModel(application) {
 
     private val _listOfBreeds =  MutableLiveData<LoadState>()
@@ -20,7 +20,7 @@ class BreedListViewModel(application: Application, val service: CatApiService) :
     fun updateList() {
         _listOfBreeds.postValue(LoadState.Loading)
         CoroutineScope(Dispatchers.Main).launch {
-            val response = service.getAllBreeds()
+            val response = repository.getAllBreeds()
 
             if (response.isSuccessful) {
                 _listOfBreeds.postValue(LoadState.Success<List<CatBreed>>(response.body()))

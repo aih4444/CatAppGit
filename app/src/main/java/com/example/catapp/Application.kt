@@ -1,6 +1,7 @@
 package com.example.catapp
 
 import android.app.Application
+import com.example.catapp.di.repositoryModule
 import com.example.catapp.di.retrofitModule
 import com.example.catapp.di.serviceModule
 import com.example.catapp.di.viewModelModule
@@ -14,7 +15,7 @@ class Application : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@Application)
-            modules(listOf(retrofitModule, viewModelModule, serviceModule ))
+            modules(listOf(retrofitModule, viewModelModule, serviceModule, repositoryModule ))
         }
     }
 }
