@@ -11,7 +11,6 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.example.catapp.ui.breeds.BreedAdapter
-import com.example.catapp.ui.breeds.BreedListFragment
 import org.junit.Before
 import org.junit.Test
 

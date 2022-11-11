@@ -32,7 +32,9 @@ class BreedListFragment : Fragment() {
     ): View? {
         binding = FragmentBreedListBinding.inflate(layoutInflater, container, false)
         return binding.root
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,6 +51,10 @@ class BreedListFragment : Fragment() {
             }
         }
         viewModel.updateList()
-    }
 
+        binding.btnDogs.setOnClickListener(View.OnClickListener {
+            findNavController().navigate(R.id.action_breedListFragment_to_dogsFragment)
+
+        })
+    }
 }

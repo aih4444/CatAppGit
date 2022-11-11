@@ -53,6 +53,7 @@ android {
         quality {
             dimension "client"
             buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/\""
+            buildConfigField "String", "BASE_DOG_URL", "\"https://api.thedogapi.com/v1/\""
 
             //if you want to use string anywhere of app show you define
             // buildConfigField and get value where you want to use.
@@ -71,6 +72,7 @@ android {
         development {
             dimension "client"
             buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/\""
+            buildConfigField "String", "BASE_DOG_URL", "\"https://api.thedogapi.com/v1/\""
 
             //if you want to use string anywhere of app show you define
             // buildConfigField and get value where you want to use.
