@@ -1,6 +1,8 @@
 package com.example.catapp.network
 
+import com.example.catapp.BuildConfig
+
 object REST_API {
-    const val API_BASE_URL="https://api.thecatapi.com/v1/"
-    const val API_BREEDLIST="breeds"
+    const val API_BASE_URL= BuildConfig.BASE_URL
+    const val API_BREEDLIST=BuildConfig.API_BREEDLIST
 }

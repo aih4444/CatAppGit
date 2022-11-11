@@ -23,6 +23,70 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "client"
+    productFlavors {
+// use for production debug and release build
+        production {
+            dimension "client"
+
+            buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/\""
+            buildConfigField "String", "BASE_DOG_URL", "\"https://api.thedogapi.com/v1/\""
+
+            //if you want to use string anywhere of app show you define
+            // buildConfigField and get value where you want to use.
+
+            buildConfigField "String", "API_BREEDLIST", "\"breeds\""
+
+
+            //if you want change application name  and app icon so you define
+            // resValue, manifestPlaceholders and get these value in Manifests file.
+            resValue "string", "app_name", "CatDog_World"
+            //production  app icon
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round"
+            ]
+//            signingConfig signingConfigs.release
+
+        }
+        // use for quality debug and release build
+        quality {
+            dimension "client"
+            buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/\""
+
+            //if you want to use string anywhere of app show you define
+            // buildConfigField and get value where you want to use.
+
+            buildConfigField "String", "API_BREEDLIST", "\"breeds\""
+
+            //use for quality app name
+            resValue "string", "app_name", "CatDog_QA"
+            // use for quality app icon
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round"
+            ]
+        }
+// use for development debug and release build
+        development {
+            dimension "client"
+            buildConfigField "String", "BASE_URL", "\"https://api.thecatapi.com/v1/\""
+
+            //if you want to use string anywhere of app show you define
+            // buildConfigField and get value where you want to use.
+
+            buildConfigField "String", "API_BREEDLIST", "\"breeds\""
+
+            //use for dev app name
+            resValue "string", "app_name", "CatDog_Dev"
+            //use for dev app icon
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round"
+            ]
+        }
+
+    }
 
     buildFeatures {
         dataBinding = true
